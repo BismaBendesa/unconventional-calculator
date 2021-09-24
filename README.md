@@ -1,2 +1,2 @@
 # unconventional-calculator
-This is an simple unconventional calculator app
+This is a simple unconventional calculator app
