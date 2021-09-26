@@ -10,12 +10,19 @@ let parseUserInput = function (){
 
 // this function responsible to create calculation log
 let createCalculationLog = function (operator, numberInputed){
-    return `${currentResult} ${operator} ${numberInputed}`
+    if (isNaN(numberInputed)){
+        return alert("Please input a valid number!");
+    } else{
+        return `${currentResult} ${operator} ${numberInputed}`;
+    }
 }
 
-// add buton clicked
+// add button clicked
 function onClickedAddBtn(){
     addCalculation = createCalculationLog("+", parseUserInput());
+        if(isNaN(parseUserInput())){
+            return;
+        }
     currentResult += parseUserInput();
     outputResult(currentResult, addCalculation);
     console.log(userInput.value);
@@ -24,6 +31,9 @@ function onClickedAddBtn(){
 // subtract button clicked
 function onClickedSubtractBtn(){
     subtractCalculation = createCalculationLog("-", parseUserInput());
+    if(isNaN(parseUserInput())){
+        return;
+    }
     currentResult -= parseUserInput();
     outputResult(currentResult, subtractCalculation);
     console.log(userInput.value);
@@ -32,6 +42,9 @@ function onClickedSubtractBtn(){
 // multiply button clicked
 function onClickedMultiplyBtn(){
     multiplyCalculation = createCalculationLog("*", parseUserInput());
+    if(isNaN(parseUserInput())){
+        return;
+    }
     currentResult *= parseUserInput();
     outputResult(currentResult, multiplyCalculation);
     console.log(userInput.value);
@@ -40,6 +53,9 @@ function onClickedMultiplyBtn(){
 // Divide button clicked
 function onClickedDivideBtn(){
     divideCalculation = createCalculationLog("/", parseUserInput());
+    if(isNaN(parseUserInput())){
+        return;
+    }
     currentResult /= parseUserInput();
     outputResult(currentResult, divideCalculation);
     console.log(userInput.value);
