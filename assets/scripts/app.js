@@ -6,24 +6,32 @@ let parseUserInput = function (){
     return userInputNumber;
 }
 
+let createCalculationLog = function (operator, numberInputed){
+    return `${currentResult} ${operator} ${numberInputed}`
+}
+
 function onClickedAddBtn(){
+    addCalculation = createCalculationLog("+", parseUserInput());
     currentResult += parseUserInput();
-    outputResult(currentResult, "");
+    outputResult(currentResult, addCalculation);
     console.log(userInput.value);
 }
 function onClickedSubtractBtn(){
+    subtractCalculation = createCalculationLog("-", parseUserInput());
     currentResult -= parseUserInput();
-    outputResult(currentResult, "");
+    outputResult(currentResult, subtractCalculation);
     console.log(userInput.value);
 }
 function onClickedMultiplyBtn(){
+    multiplyCalculation = createCalculationLog("*", parseUserInput());
     currentResult *= parseUserInput();
-    outputResult(currentResult, "");
+    outputResult(currentResult, multiplyCalculation);
     console.log(userInput.value);
 }
 function onClickedDivideBtn(){
+    divideCalculation = createCalculationLog("/", parseUserInput());
     currentResult /= parseUserInput();
-    outputResult(currentResult, "");
+    outputResult(currentResult, divideCalculation);
     console.log(userInput.value);
 }
 
